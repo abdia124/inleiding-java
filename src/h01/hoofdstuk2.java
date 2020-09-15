@@ -12,6 +12,6 @@ public class hoofdstuk2 extends Applet {
 
 
     public void paint(Graphics g) {
-g.drawString("Welcome to Java!!", 50, 60);
+        g.drawString("Welcome to Java!!", 50, 60);
     }
 }
