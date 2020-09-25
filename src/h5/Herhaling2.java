@@ -26,7 +26,7 @@ public class Herhaling2 extends Applet {
         g.fillRect(290,240,breedte,110);
         g.drawString("Valerie",hoogte,380);
         g.drawString("Jeroen",220,380);
-        g.drawString("Hans",300,380);
+        g.drawString("Hans",301,380);
 
 
     }
