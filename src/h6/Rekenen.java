@@ -4,8 +4,8 @@ import java.applet.Applet;
 import java.awt.*;
 
 public class Rekenen extends Applet {
-    int a, b;
-    double uitkomst;
+    int a;
+    double b, uitkomst;
 
     public void init() {
         setBackground(Color.white);
