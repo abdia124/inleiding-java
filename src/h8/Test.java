@@ -9,10 +9,13 @@ public class Test extends Applet {
     Button knop;
     Button klikie;
     TextField Tekstvak;
-    Color backgroundColor = Color.orange;
+    Color backgroundColor = Color.white;
 
     public void init() {
         setSize(1000, 1000);
+        Tekstvak = new TextField("hey hoi",30);
+        add(Tekstvak);
+        Tekstvak.addActionListener(new Kladje());
 
         knop = new Button();
         knop.setLabel("Niet klikken dankje.");
@@ -21,9 +24,9 @@ public class Test extends Applet {
 
         klikie = new Button();
         klikie.setLocation(150, 150);
-        klikie.setLabel("Ok!");
+        klikie.setLabel("Reset");
         add(klikie);
-
+        klikie.addActionListener(new Kladtekst());
 
     }
 
@@ -37,6 +40,21 @@ public class Test extends Applet {
         public void actionPerformed(ActionEvent e) {
             System.out.println("Knopklik");
             setBackground(Color.pink);
+            repaint();
+        }
+    }
+    class Kladtekst implements ActionListener{
+        public void actionPerformed(ActionEvent e) {
+            System.out.println("klik");
+            setBackground(backgroundColor);
+
+            repaint();
+
+        }
+    }
+    class Kladje implements ActionListener{
+
+        public void actionPerformed(ActionEvent e) {
             repaint();
         }
     }
