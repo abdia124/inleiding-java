@@ -5,17 +5,26 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Test extends Applet {
+
     Button knop;
-    String schermtekst;
+    Button klikie;
+    TextField Tekstvak;
+    Color backgroundColor = Color.orange;
 
     public void init() {
-        setBackground(Color.white);
         setSize(1000, 1000);
+
         knop = new Button();
-        KnopListener kl = new KnopListener();
-        knop.addActionListener(kl);
-        knop.setLabel("NEE");
+        knop.setLabel("Niet klikken dankje.");
         add(knop);
+        knop.addActionListener(new Tekstklad());
+
+        klikie = new Button();
+        klikie.setLocation(150, 150);
+        klikie.setLabel("Ok!");
+        add(klikie);
+
+
     }
 
 
@@ -23,9 +32,12 @@ public class Test extends Applet {
 
     }
 
-    class KnopListener implements ActionListener {
+    class Tekstklad implements ActionListener {
+
         public void actionPerformed(ActionEvent e) {
-            schermtekst = "Ja, deze knop doet wel iets";
+            System.out.println("Knopklik");
+            setBackground(Color.pink);
+            repaint();
         }
     }
 }
