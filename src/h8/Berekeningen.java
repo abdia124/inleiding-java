@@ -11,6 +11,7 @@ public class Berekeningen extends Applet {
 
 
     public void init() {
+        knop=new Button();
         setBackground(Color.white);
         setSize(1000, 1000);
         tekstvak = new TextField("nee", 50);

@@ -10,10 +10,10 @@ public class Test extends Applet {
     TextField tekstvak;
 
     public void init() {
-        knop = new Button();
+        knop = new Button("Ok");
         setBackground(Color.white);
         setSize(1000, 1000);
-        tekstvak = new TextField("nee", 50);
+        tekstvak = new TextField("", 50);
         add(knop);
         add(tekstvak);
         tekstvak.addActionListener(new Btw());
