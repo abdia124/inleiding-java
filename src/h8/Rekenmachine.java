@@ -43,8 +43,7 @@ public class Rekenmachine extends Applet {
         tekstvak.addActionListener(new gedeeld());
         tekstvak2.addActionListener(new gedeeld());
         getal = 0.0;
-        a=tekstvak.getText(plus);
-        b=tekstvak2.getText(plus);
+
 
     }
 
@@ -67,20 +66,32 @@ public class Rekenmachine extends Applet {
     class min implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-
+            String imput = tekstvak.getText();
+            getal = Double.parseDouble(imput);
+            System.out.println(imput);
+            getal += 0;
+            repaint();
         }
     }
 
     class keer implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-
+            String imput = tekstvak.getText();
+            getal = Double.parseDouble(imput);
+            System.out.println(imput);
+            getal += 0;
+            repaint();
         }
     }
 
     class gedeeld implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
+            String imput = tekstvak.getText();
+            getal = Double.parseDouble(imput);
+            System.out.println(imput);
+            getal += 0;
+            repaint();
         }
     }
 }
