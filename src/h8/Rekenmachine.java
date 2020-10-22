@@ -18,7 +18,6 @@ public class Rekenmachine extends Applet {
     TextField tekstvak2;
 
 
-
     public void init() {
         setBackground(Color.white);
         setSize(1000, 1000);
@@ -58,7 +57,11 @@ public class Rekenmachine extends Applet {
         knop2.addActionListener(new gedeeld());
         knop3.addActionListener(new gedeeld());
         knop4.addActionListener(new gedeeld());
-
+        tekstvak2.addActionListener(new vak());
+        knop.addActionListener(new vak());
+        knop2.addActionListener(new vak2());
+        knop3.addActionListener(new vak3());
+        knop4.addActionListener(new vak4());
 
 
 
@@ -78,8 +81,8 @@ public class Rekenmachine extends Applet {
             String imput = tekstvak.getText();
             String imput2 = tekstvak2.getText();
             getal = Double.parseDouble(imput);
-            getal2= Double.parseDouble(imput2);
-            result= getal + getal2;
+            getal2 = Double.parseDouble(imput2);
+            result = getal + getal2;
             System.out.println(result);
             repaint();
         }
@@ -89,7 +92,7 @@ public class Rekenmachine extends Applet {
 
         public void actionPerformed(ActionEvent e) {
             String imput3 = tekstvak.getText();
-            String imput4= tekstvak2.getText();
+            String imput4 = tekstvak2.getText();
             getal = Double.parseDouble(imput3);
             getal2 = Double.parseDouble(imput4);
             result = getal - getal2;
@@ -101,8 +104,8 @@ public class Rekenmachine extends Applet {
     class keer implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-            String imput4= tekstvak.getText();
-            String imput5= tekstvak2.getText();
+            String imput4 = tekstvak.getText();
+            String imput5 = tekstvak2.getText();
             getal = Double.parseDouble(imput4);
             getal2 = Double.parseDouble(imput5);
             result = getal * getal2;
@@ -114,12 +117,48 @@ public class Rekenmachine extends Applet {
     class gedeeld implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             String imput6 = tekstvak.getText();
-            String imput7= tekstvak2.getText();
+            String imput7 = tekstvak2.getText();
             getal = Double.parseDouble(imput6);
             getal2 = Double.parseDouble(imput7);
             result = getal / getal2;
             System.out.println(result);
             repaint();
+
+        }
+    }
+
+    class vak implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            tekstvak.setText("");
+            tekstvak2.setText("");
+            repaint();
+        }
+    }
+
+    class vak2 implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            tekstvak.setText("");
+            tekstvak2.setText("");
+            repaint();
+
+        }
+    }
+
+    class vak3 implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            tekstvak.setText("");
+            tekstvak2.setText("");
+            repaint();
+        }
+    }
+
+    class vak4 implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            tekstvak.setText("");
+            tekstvak2.setText("");
+            repaint();
+
+
         }
     }
 }
