@@ -7,16 +7,16 @@ import java.awt.event.ActionListener;
 
 public class Rekenmachine extends Applet {
 
+    double getal;
+    double getal2;
+    double result;
     Button knop;
     Button knop2;
     Button knop3;
     Button knop4;
     TextField tekstvak;
     TextField tekstvak2;
-    Double getal;
-    int uitkomst;
-    int a;
-    int b;
+
 
 
     public void init() {
@@ -42,6 +42,26 @@ public class Rekenmachine extends Applet {
         tekstvak2.addActionListener(new keer());
         tekstvak.addActionListener(new gedeeld());
         tekstvak2.addActionListener(new gedeeld());
+        knop.addActionListener(new plus());
+        knop2.addActionListener(new plus());
+        knop3.addActionListener(new plus());
+        knop4.addActionListener(new plus());
+        knop.addActionListener(new min());
+        knop2.addActionListener(new min());
+        knop3.addActionListener(new min());
+        knop4.addActionListener(new min());
+        knop.addActionListener(new keer());
+        knop2.addActionListener(new keer());
+        knop3.addActionListener(new keer());
+        knop4.addActionListener(new keer());
+        knop.addActionListener(new gedeeld());
+        knop2.addActionListener(new gedeeld());
+        knop3.addActionListener(new gedeeld());
+        knop4.addActionListener(new gedeeld());
+
+
+
+
         getal = 0.0;
 
 
@@ -49,16 +69,18 @@ public class Rekenmachine extends Applet {
 
 
     public void paint(Graphics g) {
-
+        g.drawString("resultaat is: " + result, 250, 50);
     }
 
     class plus implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
             String imput = tekstvak.getText();
+            String imput2 = tekstvak2.getText();
             getal = Double.parseDouble(imput);
-            System.out.println(imput);
-            getal += 0;
+            getal2= Double.parseDouble(imput2);
+            result= getal + getal2;
+            System.out.println(result);
             repaint();
         }
     }
@@ -66,10 +88,12 @@ public class Rekenmachine extends Applet {
     class min implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-            String imput = tekstvak.getText();
-            getal = Double.parseDouble(imput);
-            System.out.println(imput);
-            getal += 0;
+            String imput3 = tekstvak.getText();
+            String imput4= tekstvak2.getText();
+            getal = Double.parseDouble(imput3);
+            getal2 = Double.parseDouble(imput4);
+            result = getal - getal2;
+            System.out.println(result);
             repaint();
         }
     }
@@ -77,20 +101,24 @@ public class Rekenmachine extends Applet {
     class keer implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
-            String imput = tekstvak.getText();
-            getal = Double.parseDouble(imput);
-            System.out.println(imput);
-            getal += 0;
+            String imput4= tekstvak.getText();
+            String imput5= tekstvak2.getText();
+            getal = Double.parseDouble(imput4);
+            getal2 = Double.parseDouble(imput5);
+            result = getal * getal2;
+            System.out.println(result);
             repaint();
         }
     }
 
     class gedeeld implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            String imput = tekstvak.getText();
-            getal = Double.parseDouble(imput);
-            System.out.println(imput);
-            getal += 0;
+            String imput6 = tekstvak.getText();
+            String imput7= tekstvak2.getText();
+            getal = Double.parseDouble(imput6);
+            getal2 = Double.parseDouble(imput7);
+            result = getal / getal2;
+            System.out.println(result);
             repaint();
         }
     }
