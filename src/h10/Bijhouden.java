@@ -7,28 +7,40 @@ import java.awt.event.ActionListener;
 
 public class Bijhouden extends Applet {
     TextField tekstvak;
-    boolean invoer;
+
     int maxGetal;
-    int minGetal;
+    int invoer;
+    String a;
 
-    String A;
-
-    public void init(){
+    public void init() {
         setBackground(Color.white);
-        setSize(1000,1000);
-        tekstvak=new TextField();
+        setSize(1000, 1000);
+        tekstvak = new TextField();
         add(tekstvak);
-        minGetal=0;
+        maxGetal = 0;
+        tekstvak.addActionListener(new Statement());
 
     }
 
 
     public void paint(Graphics g) {
-
+        g.drawString("Hoogste getal is: " + maxGetal, 50, 50);
 
     }
-    class Statement implements ActionListener{
+
+    class Statement implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            a = tekstvak.getText();
+            System.out.println(a);
+            invoer = Integer.parseInt(a);
+
+            if (invoer > maxGetal) {
+                maxGetal = invoer;
+            } else {
+
+            }
+            repaint();
+
 
         }
     }
