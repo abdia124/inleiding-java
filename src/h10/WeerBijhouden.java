@@ -40,8 +40,8 @@ g.drawString("het laagste getal is " + minGetal,100,150);
             if (invoer > maxGetal) {
                 maxGetal = invoer;
             } else {
-
-
+              if (minGetal==invoer);
+                minGetal=invoer;
             }
             repaint();
         }
@@ -53,7 +53,8 @@ g.drawString("het laagste getal is " + minGetal,100,150);
             if (minGetal<invoer) {
                 minGetal = invoer;
             } else {
-
+            if (minGetal<=invoer)
+             minGetal=invoer;
             }
             repaint();
         }
