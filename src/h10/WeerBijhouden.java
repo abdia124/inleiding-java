@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 
 public class WeerBijhouden extends Applet {
     TextField tekstvak;
+
     int invoer;
     int maxGetal;
     int minGetal;
@@ -19,7 +20,7 @@ public class WeerBijhouden extends Applet {
         tekstvak = new TextField();
         add(tekstvak);
         maxGetal = 0;
-        minGetal = 0;
+        minGetal = 999;
         tekstvak.addActionListener(new Nummer());
         tekstvak.addActionListener(new Nummer2());
 
@@ -40,24 +41,24 @@ g.drawString("het laagste getal is " + minGetal,100,150);
             if (invoer > maxGetal) {
                 maxGetal = invoer;
             } else {
-              if (minGetal==invoer);
-                minGetal=invoer;
+
             }
             repaint();
         }
     }
     class Nummer2 implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            System.out.println(b);
             b = tekstvak.getText();
-            invoer = Integer.parseInt(a);
-            if (minGetal<invoer) {
-                minGetal = invoer;
+            invoer = Integer.parseInt(b);
+            if (invoer<=minGetal) {
+               minGetal = invoer;
             } else {
-            if (minGetal<=invoer)
-             minGetal=invoer;
+
             }
             repaint();
         }
 
     }
+
 }
