@@ -27,11 +27,13 @@ public class Schrikkelkalender extends Applet {
         label=new Label("typ hier het maandnummer in");
         add(label);
         add(label2);
-
+        tekst = "";
+        tekst2 = "";
 
         tekstvak.addActionListener(new Maanden());
         tekstvak2.addActionListener(new Jaren());
-
+        tekstvak.addActionListener(new Jaren());
+        tekstvak2.addActionListener(new Maanden());
 
     }
 
@@ -41,8 +43,6 @@ public class Schrikkelkalender extends Applet {
         g.drawString(tekst2,100,150);
         tekstvak.setLocation(150,200);
         tekstvak2.setLocation(150,250);
-        tekstvak.setSize(100,100);
-        tekstvak2.setSize(100,100);
         label.setLocation(150,170);
         label2.setLocation(150,220);
     }
@@ -96,12 +96,13 @@ public class Schrikkelkalender extends Applet {
 
 
             }
+            repaint();
         }
     }
 class Jaren implements ActionListener{
     public void actionPerformed(ActionEvent e) {
-        jaar=Integer.parseInt(b);
         b=tekstvak2.getText();
+        jaar=Integer.parseInt(b);
         if ( (jaar % 4 == 0 && !(jaar % 100 == 0)) ||
                 jaar % 400 == 0 ) {
             tekst2 = ""+ jaar + " is een schrikkeljaar";
