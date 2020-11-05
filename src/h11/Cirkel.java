@@ -14,8 +14,8 @@ public class Cirkel extends Applet {
     public void paint(Graphics g) {
         int x=50;
         int y=50;
-        int breedte=100;
-        int hoogte=100;
+        int breedte=10;
+        int hoogte=10;
 
         for (int teller = 1; teller < 6; teller++) {
             g.drawOval(x,y,breedte,hoogte);
