@@ -6,33 +6,53 @@ import java.awt.*;
 public class Schaakbord extends Applet {
 
     public void init() {
-        setBackground(Color.gray);
+
+        setSize(1000, 1000);
 
     }
 
 
     public void paint(Graphics g) {
-        int x=20; int x2=40;
-        int y=20; int y2=40;
-        int breedte=10;
-        int hoogte=10;
+        int x = 50;
+        int y = 40;
+        int breedte = 35;
+        int hoogte = 50;
+        int kolom;
 
-        for (int zwart = 0; zwart < 8; zwart++) {
-
+        for (kolom = 0; kolom < 8; kolom++) {
             g.drawRect(x, y, breedte, hoogte);
-            g.setColor(Color.BLACK);
-            g.fillRect(x, y, breedte, hoogte);
-            x+=15;
-            y+=15;
-        }
-        for (int wit = 0; wit < 8; wit++) {
-            g.drawRect(x2, y2, breedte, hoogte);
-            g.setColor(Color.white);
-            g.fillRect(x2, y2, breedte, hoogte);
-            x2+=15;
-            y2+=15;
-        }
-        }
 
+
+            if (kolom == 0 || kolom == 2 || kolom == 4 || kolom == 6) {
+
+
+                g.setColor(Color.black);
+                g.fillRect(x, y, breedte, hoogte);
+
+            } else {
+
+                g.setColor(Color.white);
+                g.fillRect(x, y, breedte, hoogte);
+
+
+            }
+
+            x += breedte;
+        }
+        x = 50;
+        y += hoogte;
+
+        for (kolom = 0; kolom < 8; kolom++) {
+            if (kolom == 0 || kolom == 2 || kolom == 4 || kolom == 6) {
+                g.setColor(Color.white);
+            } else {
+                g.setColor(Color.black);
+
+            }
+            g.fillRect(x, y, breedte, hoogte);
+            x += breedte;
+
+        }
     }
 
+}
