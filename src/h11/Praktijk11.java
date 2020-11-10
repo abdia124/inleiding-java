@@ -22,9 +22,9 @@ public class Praktijk11 extends Applet {
         knop = new Button("OK");
         add(knop);
         tekstvak.addActionListener(new Tafel());
+        knop.addActionListener(new Tafel());
         getal = 1;
     }
-
 
     public void paint(Graphics g) {
         int y = 20;
@@ -33,14 +33,12 @@ public class Praktijk11 extends Applet {
             y += 20;
             g.drawString(getal + "X" + teller + "=" + uitkomst, 50, y);
 
-
         }
-
-
     }
 
     class Tafel implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+
             a = tekstvak.getText();
             getal = Integer.parseInt(a);
             repaint();
