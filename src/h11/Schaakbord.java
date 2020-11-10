@@ -11,47 +11,24 @@ public class Schaakbord extends Applet {
 
     }
 
-
     public void paint(Graphics g) {
         int x = 50;
-        int y = 40;
-        int breedte = 35;
-        int hoogte = 50;
-        int kolom;
+        int y = 50;
+        int breedte = 40;
+        int hoogte = 40;
 
-        for (kolom = 0; kolom < 8; kolom++) {
-            g.drawRect(x, y, breedte, hoogte);
+        for (int horizontaal = 0; horizontaal < 8; horizontaal++) {
+            for (int verticaal = 0; verticaal < 8; verticaal++) {
+                if ((verticaal + horizontaal) % 2 == 0) {
+                    g.setColor(Color.black);
+                    g.fillRect(x, y, breedte, hoogte);
+                } else {
 
-
-            if (kolom == 0 || kolom == 2 || kolom == 4 || kolom == 6) {
-
-
-                g.setColor(Color.black);
-                g.fillRect(x, y, breedte, hoogte);
-
-            } else {
-
-                g.setColor(Color.white);
-                g.fillRect(x, y, breedte, hoogte);
-
-
+                }
+                x += 40;
             }
-
-            x += breedte;
-        }
-        x = 50;
-        y += hoogte;
-
-        for (kolom = 0; kolom < 8; kolom++) {
-            if (kolom == 0 || kolom == 2 || kolom == 4 || kolom == 6) {
-                g.setColor(Color.white);
-            } else {
-                g.setColor(Color.black);
-
-            }
-            g.fillRect(x, y, breedte, hoogte);
-            x += breedte;
-
+            x = 50;
+            y += 40;
         }
     }
 
