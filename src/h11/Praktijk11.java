@@ -12,23 +12,26 @@ public class Praktijk11 extends Applet {
     String a;
     int uitkomst;
     int getal;
-
+    int teller;
 
     public void init() {
         tekstvak = new TextField();
         label = new Label("voer tafel 1 t/m 10 in");
         add(label);
         add(tekstvak);
-        knop = new Button();
+        knop = new Button("OK");
         add(knop);
         tekstvak.addActionListener(new Tafel());
+        getal = 1;
     }
 
 
     public void paint(Graphics g) {
-        for (int teller = 1; teller < 10; teller++) {
+        int y = 20;
+        for (teller = 1; teller < 10; teller++) {
             uitkomst = getal * teller;
-            int y = 20;
+            y += 20;
+            g.drawString(getal + "X" + teller + "=" + uitkomst, 50, y);
 
 
         }
@@ -38,8 +41,9 @@ public class Praktijk11 extends Applet {
 
     class Tafel implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
-
+            a = tekstvak.getText();
+            getal = Integer.parseInt(a);
+            repaint();
         }
     }
 }
