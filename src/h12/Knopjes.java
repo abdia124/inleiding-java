@@ -15,7 +15,6 @@ public class Knopjes extends Applet {
         for (int teller = 0; teller < knoppen.length; teller++) {
             knoppen[teller]=new Button(""+teller);
             add(knoppen[teller]);
-
         }
     }
 }
