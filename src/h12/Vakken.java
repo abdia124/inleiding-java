@@ -6,18 +6,25 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Vakken extends Applet {
-    TextField[] tekstvak;
+    TextField[] tekstvakken = new TextField[6];
+    int[] getallen;
     Button knop;
-    int teller;
+    Label label;
+
 
     public void init() {
-        tekstvak= new TextField[6];
-        knop = new Button();
+
+        setSize(500,500);
+
+        label = new Label("zet 5 getallen in de tekstvakken");
+        knop = new Button("volgorde");
+        knop.addActionListener(new VakListener());
         add(knop);
-        for (teller = 0; teller < tekstvak.length; teller++) {
-            tekstvak[teller] = new TextField("" + teller);
-            add(tekstvak[teller]);
-            tekstvak[teller].addActionListener(new VakListener());
+        add(label);
+        for (int teller = 0; teller < 6; teller++) {
+            tekstvakken[teller] = new TextField("" + teller);
+            add(tekstvakken[teller]);
+            tekstvakken[teller].addActionListener(new VakListener());
 
         }
 
@@ -32,5 +39,16 @@ public class Vakken extends Applet {
 
 class VakListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
+        String a;
+        for (int cijfer = 0; cijfer <6 ; cijfer++) {
+
+
+
+
+
+        }
+
+
+
     }
 }
