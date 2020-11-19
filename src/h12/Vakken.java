@@ -26,6 +26,8 @@ public class Vakken extends Applet {
             add(tekstvakken[teller]);
             tekstvakken[teller].addActionListener(new VakListener());
 
+
+
         }
 
     }
