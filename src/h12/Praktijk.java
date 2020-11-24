@@ -2,6 +2,8 @@ package h12;
 
 import java.applet.Applet;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Praktijk extends Applet {
     TextField naam;
@@ -21,8 +23,9 @@ public class Praktijk extends Applet {
         add(naam);
         add(telefoon);
         add(knop);
-
-
+        naam.addActionListener(new Listener());
+        telefoon.addActionListener(new Listener());
+        knop.addActionListener(new Listener());
     }
 
 
@@ -32,5 +35,10 @@ public class Praktijk extends Applet {
         label2.setLocation(100, 100);
         telefoon.setLocation(270, 100);
 
+    }
+    class Listener implements ActionListener{
+        public void actionPerformed(ActionEvent e) {
+
+        }
     }
 }
