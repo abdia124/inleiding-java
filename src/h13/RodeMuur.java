@@ -14,14 +14,13 @@ public class RodeMuur extends Applet {
     }
 
     void BaksteenMuur(Graphics g, int x, int y, int breedte, int hoogte) {
-
         int y2 = y;
         g.setColor(Color.red);
         g.fillRect(x, y, breedte, hoogte);
         g.setColor(Color.black);
-        int hoogte2 = hoogte / 20;
-        int breedte2 = breedte / 20;
-        for (int teller = 0; teller < hoogte * breedte / hoogte2; teller += breedte / 15) {
+        int hoogte2 = hoogte / 10;
+        int breedte2 = breedte / 10;
+        for (int teller = 0; teller < hoogte * breedte / hoogte2; teller +=breedte / 15) {
             g.drawRect(x, y, breedte2, hoogte2);
             y += hoogte2;
             while (y >= hoogte) {
